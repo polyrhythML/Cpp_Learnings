@@ -5,7 +5,6 @@
     * Every program has a default thread i.e. the main thread - main() program runs on a thread.
     * We create multiple threads under main thread.
     * Threads are light-weight process -> parallelizing your task
-    * 
 */
 
 void findeven(long start, long end){
@@ -50,7 +49,7 @@ void threaded(){
     std::thread t2(findodd, start, end);             
     
     t1.join();      // Connecting thread 1 to main thread
-    t2.join();      // Connecting thread 2 to main thread otherwise no output if thread work is not complete
+    t2.join();      // Connecting thread 2 to main thread otherwise no output, if thread work is not complete.
 
     auto end_time = std::chrono::high_resolution_clock::now();
     auto duration_1 = std::chrono::duration_cast<std::chrono::milliseconds>(end_time-start_time).count();
